@@ -5,7 +5,7 @@ Feature: LoginFeature
     Given I navigate to the login page of the application
     And I enter the username as "admin" and password as "admin"
     And I enter the UserName and Password
-      | Username | Password |
+      | username | password |
       | admin    | admin    |
     When I click login button
     Then I should see the userform page
