@@ -11,9 +11,10 @@ public class LoginStep {
         System.out.println("I should see userform page");
     }
 
-    @And("I enter the username as admin and password as admin")
-    public void iEnterTheUsernameAsAdminAndPasswordAsAdmin() {
+    @And("I enter the username as {string} and password as {string}")
+    public void iEnterTheUsernameAsAndPasswordAs(String username, String password) {
         System.out.println("Navigate to login page");
+        System.out.println("Username is: " + username + " and Password is: " + password);
     }
 
     @When("I click login button")
@@ -25,4 +26,5 @@ public class LoginStep {
     public void iShouldSeeTheUserformPage() {
         System.out.println("I should see the userform page");
     }
+
 }
