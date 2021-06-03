@@ -1,9 +1,12 @@
 package Steps;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import java.util.List;
 
 public class LoginStep {
     @Given("I navigate to the login page of the application")
@@ -15,6 +18,14 @@ public class LoginStep {
     public void iEnterTheUsernameAsAndPasswordAs(String username, String password) {
         System.out.println("Navigate to login page");
         System.out.println("Username is: " + username + " and Password is: " + password);
+    }
+
+    @And("I enter the UserName and Password")
+    public void iEnterTheUserNameAndPassword(DataTable table) {
+        List<List<String>> data = table.cells();
+
+        System.out.println(data.get(1).get(0));
+        System.out.println(data.get(1).get(1));
     }
 
     @When("I click login button")
